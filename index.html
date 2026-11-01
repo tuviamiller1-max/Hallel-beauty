@@ -2,145 +2,255 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hallel Beauty</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hallel Beauty | הרמת ריסים וגבות</title>
+
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #fff5f8;
-  color: #49343d;
+  background: #fff7f9;
+  color: #49363d;
 }
+
 header {
-  background: linear-gradient(135deg,#e9aabd,#bd7895);
-  color: white;
   text-align: center;
-  padding: 40px 15px;
+  padding: 45px 15px 30px;
+  background: linear-gradient(135deg, #f7dce5, #fff1f5);
 }
-header h1 { font-size: 34px; margin: 0; }
-header p { font-size: 16px; }
+
+header h1 {
+  font-size: 38px;
+  margin: 0;
+  color: #a95775;
+  letter-spacing: 2px;
+}
+
+header p {
+  font-size: 18px;
+  margin-top: 12px;
+}
+
 main {
-  max-width: 480px;
-  margin: 25px auto;
+  max-width: 520px;
+  margin: 30px auto;
   padding: 20px;
 }
-.card {
+
+h2 {
+  text-align: center;
+  color: #a95775;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.service {
+  background: white;
+  border: 1px solid #f0d2dc;
+  border-radius: 15px;
+  padding: 22px 10px;
+  text-align: center;
+  font-size: 19px;
+  font-weight: bold;
+  color: #a95775;
+}
+
+.service span {
+  display: block;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+form {
   background: white;
   padding: 25px;
-  border-radius: 22px;
-  box-shadow: 0 5px 20px #d9aaba55;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px #ead5dc;
 }
-h2 { text-align: center; color: #bd7895; }
+
 label {
   display: block;
-  margin-top: 16px;
+  margin: 15px 0 7px;
   font-weight: bold;
 }
+
 input, select {
   width: 100%;
   padding: 14px;
-  margin-top: 7px;
-  border: 1px solid #e7c5d1;
-  border-radius: 12px;
+  border: 1px solid #e7c5d0;
+  border-radius: 10px;
   font-size: 16px;
   background: #fffafd;
+  color: #49363d;
 }
+
 button {
   width: 100%;
+  margin-top: 25px;
   padding: 16px;
-  margin-top: 24px;
-  background: #bd7895;
-  color: white;
   border: none;
-  border-radius: 14px;
-  font-size: 18px;
+  border-radius: 12px;
+  background: #bd718d;
+  color: white;
+  font-size: 19px;
   font-weight: bold;
+  cursor: pointer;
 }
-button:active { background: #985875; }
+
+button:hover {
+  background: #a95775;
+}
+
 footer {
   text-align: center;
   padding: 25px;
-  color: #a77b8d;
+  color: #a95775;
 }
 </style>
 </head>
+
 <body>
 
 <header>
   <h1>Hallel Beauty</h1>
   <p>היופי שלך מתחיל כאן ♡</p>
+  <p>הרמת ריסים | הרמת גבות</p>
 </header>
 
 <main>
-  <div class="card">
-    <h2>קביעת תור 🌸</h2>
 
-    <form id="bookingForm">
-      <label>שם מלא</label>
-      <input type="text" id="name" required placeholder="הכניסי שם מלא">
+  <h2>הטיפולים שלנו</h2>
 
-      <label>מספר טלפון</label>
-      <input type="tel" id="phone" required placeholder="מספר טלפון">
+  <div class="services">
+    <div class="service">
+      <span>♡</span>
+      הרמת ריסים
+    </div>
 
-      <label>בחירת טיפול</label>
-      <select id="service" required>
-        <option value="">בחרי טיפול</option>
-        <option>מניקור</option>
-        <option>לק ג׳ל</option>
-        <option>פדיקור</option>
-        <option>בניית ציפורניים</option>
-        <option>טיפול יופי</option>
-      </select>
-
-      <label>בחירת תאריך</label>
-      <input type="date" id="date" required>
-
-      <label>בחירת שעה</label>
-      <select id="time" required>
-        <option value="">בחרי שעה</option>
-        <option>09:00</option>
-        <option>10:00</option>
-        <option>11:00</option>
-        <option>12:00</option>
-        <option>13:00</option>
-        <option>14:00</option>
-        <option>15:00</option>
-        <option>16:00</option>
-        <option>17:00</option>
-        <option>18:00</option>
-      </select>
-
-      <button type="submit">בקשי לקבוע תור ♡</button>
-    </form>
-    <p id="message" style="text-align:center"></p>
+    <div class="service">
+      <span>♡</span>
+      הרמת גבות
+    </div>
   </div>
+
+  <h2>קביעת תור</h2>
+
+  <form id="bookingForm">
+
+    <label for="name">שם מלא</label>
+    <input
+      type="text"
+      id="name"
+      placeholder="איך קוראים לך?"
+      required
+    >
+
+    <label for="phone">מספר טלפון</label>
+    <input
+      type="tel"
+      id="phone"
+      placeholder="הכניסי מספר טלפון"
+      required
+      pattern="[0-9+\-\s]{9,15}"
+    >
+
+    <label for="service">בחירת טיפול</label>
+    <select id="service" required>
+      <option value="">בחרי טיפול</option>
+      <option value="הרמת ריסים">הרמת ריסים</option>
+      <option value="הרמת גבות">הרמת גבות</option>
+    </select>
+
+    <label for="date">בחירת תאריך</label>
+    <input type="date" id="date" required>
+
+    <label for="time">בחירת שעה</label>
+    <select id="time" required>
+      <option value="">בחרי שעה</option>
+      <option>09:00</option>
+      <option>10:00</option>
+      <option>11:00</option>
+      <option>12:00</option>
+      <option>13:00</option>
+      <option>14:00</option>
+      <option>15:00</option>
+      <option>16:00</option>
+      <option>17:00</option>
+      <option>18:00</option>
+    </select>
+
+    <button type="submit">
+      ♡ קביעת תור בוואטסאפ
+    </button>
+
+  </form>
+
 </main>
 
 <footer>
   Hallel Beauty ©️ 2026
-  <br>כל היופי במקום אחד ♡
+  <br>
+  כל הזכויות שמורות ♡
 </footer>
+
 <script>
-document.getElementById("bookingForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+const form = document.getElementById("bookingForm");
 
-  const fields = [...this.querySelectorAll("input, select, textarea")];
+const dateInput = document.getElementById("date");
 
-  const details = fields
-    .map(field => (field.value || "").trim())
-    .filter(Boolean)
-    .join("\n");
+const today = new Date();
+const localDate = new Date(
+  today.getTime() - today.getTimezoneOffset() * 60000
+).toISOString().split("T")[0];
 
-  const message = encodeURIComponent(
-    "שלום, אני רוצה לקבוע תור בהלל ביוטי 💗\n" + details
-  );
+dateInput.min = localDate;
 
-  window.open(
-    "https://wa.me/972533305667?text=" + message,
-    "_blank"
-  );
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const service = document.getElementById("service").value;
+  const date = dateInput.value;
+  const time = document.getElementById("time").value;
+
+  if (!name || !phone || !service || !date || !time) {
+    alert("נא למלא את כל הפרטים");
+    return;
+  }
+
+  if (date < dateInput.min) {
+    alert("נא לבחור תאריך עתידי");
+    return;
+  }
+
+  const message =
+    "שלום הלל ❤️ אני רוצה לקבוע תור ב-Hallel Beauty\n\n" +
+    "שם: " + name + "\n" +
+    "טלפון: " + phone + "\n" +
+    "טיפול: " + service + "\n" +
+    "תאריך: " + date + "\n" +
+    "שעה: " + time + "\n\n" +
+    "אשמח לאישור התור 💗";
+
+  const whatsappNumber = "972533305667";
+
+  const whatsappURL =
+    "https://wa.me/" + whatsappNumber +
+    "?text=" + encodeURIComponent(message);
+
+  window.open(whatsappURL, "_blank");
 });
 </script>
+
 </body>
 </html>

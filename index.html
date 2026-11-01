@@ -121,14 +121,26 @@ footer {
   Hallel Beauty ©️ 2026
   <br>כל היופי במקום אחד ♡
 </footer>
-
 <script>
 document.getElementById("bookingForm").addEventListener("submit", function(e) {
   e.preventDefault();
-  document.getElementById("message").textContent =
-    "הפרטים מולאו בהצלחה! יש ליצור קשר עם העסק לאישור התור.";
+
+  const fields = [...this.querySelectorAll("input, select, textarea")];
+
+  const details = fields
+    .map(field => (field.value || "").trim())
+    .filter(Boolean)
+    .join("\n");
+
+  const message = encodeURIComponent(
+    "שלום, אני רוצה לקבוע תור בהלל ביוטי 💗\n" + details
+  );
+
+  window.open(
+    "https://wa.me/972533305667?text=" + message,
+    "_blank"
+  );
 });
 </script>
-
 </body>
 </html>

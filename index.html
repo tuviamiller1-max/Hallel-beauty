@@ -1,12 +1,134 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hallel Beauty</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hallel Beauty</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff5f8;
+  color: #49343d;
+}
+header {
+  background: linear-gradient(135deg,#e9aabd,#bd7895);
+  color: white;
+  text-align: center;
+  padding: 40px 15px;
+}
+header h1 { font-size: 34px; margin: 0; }
+header p { font-size: 16px; }
+main {
+  max-width: 480px;
+  margin: 25px auto;
+  padding: 20px;
+}
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 22px;
+  box-shadow: 0 5px 20px #d9aaba55;
+}
+h2 { text-align: center; color: #bd7895; }
+label {
+  display: block;
+  margin-top: 16px;
+  font-weight: bold;
+}
+input, select {
+  width: 100%;
+  padding: 14px;
+  margin-top: 7px;
+  border: 1px solid #e7c5d1;
+  border-radius: 12px;
+  font-size: 16px;
+  background: #fffafd;
+}
+button {
+  width: 100%;
+  padding: 16px;
+  margin-top: 24px;
+  background: #bd7895;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: bold;
+}
+button:active { background: #985875; }
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #a77b8d;
+}
+</style>
 </head>
 <body>
+
+<header>
   <h1>Hallel Beauty</h1>
-  <p>ברוכים הבאים לקביעת תורים</p>
+  <p>היופי שלך מתחיל כאן ♡</p>
+</header>
+
+<main>
+  <div class="card">
+    <h2>קביעת תור 🌸</h2>
+
+    <form id="bookingForm">
+      <label>שם מלא</label>
+      <input type="text" id="name" required placeholder="הכניסי שם מלא">
+
+      <label>מספר טלפון</label>
+      <input type="tel" id="phone" required placeholder="מספר טלפון">
+
+      <label>בחירת טיפול</label>
+      <select id="service" required>
+        <option value="">בחרי טיפול</option>
+        <option>מניקור</option>
+        <option>לק ג׳ל</option>
+        <option>פדיקור</option>
+        <option>בניית ציפורניים</option>
+        <option>טיפול יופי</option>
+      </select>
+
+      <label>בחירת תאריך</label>
+      <input type="date" id="date" required>
+
+      <label>בחירת שעה</label>
+      <select id="time" required>
+        <option value="">בחרי שעה</option>
+        <option>09:00</option>
+        <option>10:00</option>
+        <option>11:00</option>
+        <option>12:00</option>
+        <option>13:00</option>
+        <option>14:00</option>
+        <option>15:00</option>
+        <option>16:00</option>
+        <option>17:00</option>
+        <option>18:00</option>
+      </select>
+
+      <button type="submit">בקשי לקבוע תור ♡</button>
+    </form>
+    <p id="message" style="text-align:center"></p>
+  </div>
+</main>
+
+<footer>
+  Hallel Beauty ©️ 2026
+  <br>כל היופי במקום אחד ♡
+</footer>
+
+<script>
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  document.getElementById("message").textContent =
+    "הפרטים מולאו בהצלחה! יש ליצור קשר עם העסק לאישור התור.";
+});
+</script>
+
 </body>
 </html>
